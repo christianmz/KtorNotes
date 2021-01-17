@@ -89,12 +89,12 @@ fun Route.noteRoutes() {
                     return@post
                 }
 
-                if (isOwnerOfNote(request.noteID, request.owner)) {
+                if (isOwnerOfNote(request.noteId, request.owner)) {
                     call.respond(OK, SimpleResponse(false, "This user is already an owner of this note"))
                     return@post
                 }
 
-                if (addOwnerToNote(request.noteID, request.owner)) {
+                if (addOwnerToNote(request.noteId, request.owner)) {
                     call.respond(OK, SimpleResponse(true, "${request.owner} can now see this note"))
                 } else {
                     call.respond(Conflict)

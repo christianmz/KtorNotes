@@ -1,6 +1,6 @@
 package com.meazza.data.request
 
 data class AddOwnerRequest(
-    val noteID: String,
+    val noteId: String,
     val owner: String
 )
